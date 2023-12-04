@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
-import {RouterOutlet} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {LoginService} from "./login/loginService/login.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'untitled';
+export class AppComponent implements OnInit{
+  title = 'tp_angular';
+
+
+  constructor(
+    private loginService : LoginService
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.loginService.refreshAuthState()
+  }
+
+
+
+
 }

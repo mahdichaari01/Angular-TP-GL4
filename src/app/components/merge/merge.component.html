@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <input type="number" class="form-control" formControlName="field1"  >
+    <button class="btn btn-danger" style="margin-bottom: 2%;" (click)="terminateFirstStream()">
+        Terminate Steam 1
+    </button>
+    <input type="number" class="form-control" formControlName="field2" >
+    <button class="btn btn-danger" style="margin-bottom: 2%;" (click)="terminateSecondStream()">
+        Terminate Steam 2
+    </button>
+</form>
+<div >
+    Merge : {{ merged$ | async }}
+</div>
+<div >
+    Scan : {{ scanned$ | async }}
+</div>
+<div >
+    Reduce : {{ reduced$ | async }}
+</div>
